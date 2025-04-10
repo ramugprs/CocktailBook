@@ -1,0 +1,15 @@
+{
+  "originHash" : "08593f90bcfe4049894e624ee5e6424c49cddb50538b58d02108dd09e31fa518",
+  "pins" : [
+    {
+      "identity" : "xmlcoder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MaxDesiatov/XMLCoder",
+      "state" : {
+        "revision" : "b1e944cbd0ef33787b13f639a5418d55b3bed501",
+        "version" : "0.17.1"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8099A63C2DA7782F00161702 /* CocktailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099A63B2DA7782F00161702 /* CocktailListView.swift */; };
+		8099A6422DA7787900161702 /* CocktailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099A6412DA7787900161702 /* CocktailModel.swift */; };
+		8099A64F2DA77D0300161702 /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099A64E2DA77D0300161702 /* CocktailListViewModel.swift */; };
+		8099A6552DA794A400161702 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8099A6542DA794A400161702 /* CocktailDetailView.swift */; };
+		8099A68D2DA7EEE200161702 /* XMLCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 8099A68C2DA7EEE200161702 /* XMLCoder */; };
 		E8324E7A262076EB00FD2124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8324E79262076EB00FD2124 /* AppDelegate.swift */; };
 		E8324E7C262076EB00FD2124 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8324E7B262076EB00FD2124 /* SceneDelegate.swift */; };
 		E8324E80262076EE00FD2124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8324E7F262076EE00FD2124 /* Assets.xcassets */; };
@@ -38,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8099A63B2DA7782F00161702 /* CocktailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListView.swift; sourceTree = "<group>"; };
+		8099A6412DA7787900161702 /* CocktailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailModel.swift; sourceTree = "<group>"; };
+		8099A64E2DA77D0300161702 /* CocktailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
+		8099A6542DA794A400161702 /* CocktailDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
 		E8324E76262076EB00FD2124 /* CocktailBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8324E79262076EB00FD2124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8324E7B262076EB00FD2124 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8099A68D2DA7EEE200161702 /* XMLCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +92,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8099A6352DA7751700161702 /* CocktailList */ = {
+			isa = PBXGroup;
+			children = (
+				8099A6402DA7785A00161702 /* Model */,
+				8099A63D2DA7783900161702 /* ViewModel */,
+				8099A63A2DA777F300161702 /* View */,
+			);
+			path = CocktailList;
+			sourceTree = "<group>";
+		};
+		8099A63A2DA777F300161702 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8099A63B2DA7782F00161702 /* CocktailListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8099A63D2DA7783900161702 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8099A64E2DA77D0300161702 /* CocktailListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8099A6402DA7785A00161702 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8099A6412DA7787900161702 /* CocktailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8099A6502DA791F200161702 /* CocktailDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8099A6512DA7943500161702 /* View */,
+			);
+			path = CocktailDetail;
+			sourceTree = "<group>";
+		};
+		8099A6512DA7943500161702 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8099A6542DA794A400161702 /* CocktailDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E8324E6D262076EB00FD2124 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +166,8 @@
 		E8324E78262076EB00FD2124 /* CocktailBook */ = {
 			isa = PBXGroup;
 			children = (
+				8099A6502DA791F200161702 /* CocktailDetail */,
+				8099A6352DA7751700161702 /* CocktailList */,
 				E8324E79262076EB00FD2124 /* AppDelegate.swift */,
 				E8324E7B262076EB00FD2124 /* SceneDelegate.swift */,
 				E8324E7F262076EE00FD2124 /* Assets.xcassets */,
@@ -232,6 +294,9 @@
 				Base,
 			);
 			mainGroup = E8324E6D262076EB00FD2124;
+			packageReferences = (
+				8099A68B2DA7EEE200161702 /* XCRemoteSwiftPackageReference "XMLCoder" */,
+			);
 			productRefGroup = E8324E77262076EB00FD2124 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,12 +340,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8099A6422DA7787900161702 /* CocktailModel.swift in Sources */,
+				8099A63C2DA7782F00161702 /* CocktailListView.swift in Sources */,
 				E8324EBF26207B2900FD2124 /* CocktailsAPI.swift in Sources */,
+				8099A6552DA794A400161702 /* CocktailDetailView.swift in Sources */,
 				E8324ECC26207B9100FD2124 /* FakeCocktailsAPI.swift in Sources */,
 				E8324EC726207B6100FD2124 /* CocktailsAPIError.swift in Sources */,
 				E8324E7A262076EB00FD2124 /* AppDelegate.swift in Sources */,
 				E8324EAD2620774B00FD2124 /* MainScreenViewController.swift in Sources */,
 				E8324E7C262076EB00FD2124 /* SceneDelegate.swift in Sources */,
+				8099A64F2DA77D0300161702 /* CocktailListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +521,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CocktailBook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,7 +542,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CocktailBook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,6 +674,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8099A68B2DA7EEE200161702 /* XCRemoteSwiftPackageReference "XMLCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MaxDesiatov/XMLCoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.17.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8099A68C2DA7EEE200161702 /* XMLCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8099A68B2DA7EEE200161702 /* XCRemoteSwiftPackageReference "XMLCoder" */;
+			productName = XMLCoder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8324E6E262076EB00FD2124 /* Project object */;
 }
