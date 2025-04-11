@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CocktailModel: Identifiable, Codable {
+struct CocktailModel: Identifiable, Codable, Equatable {
     var id: String
     var name: String
     var type: String

@@ -13,7 +13,9 @@ class CocktailListViewModel: ObservableObject {
     @Published var cocktailsResponse = [CocktailModel]()
     @Published var cocktails = [CocktailModel]()
     private let cocktailsAPI: CocktailsAPI = FakeCocktailsAPI()
+    let fileExtension = "cocktails.xml"
     var cancell: AnyCancellable?
+    
     func fetchCocktails() {
         cancell = cocktailsAPI.cocktailsPublisher
             .decode(type: [CocktailModel].self, decoder: JSONDecoder())
@@ -39,7 +41,7 @@ class CocktailListViewModel: ObservableObject {
             cocktail.isFav = false
             return cocktail
         })
-        let localCocktails = loadCocktailsFromXML()
+        let localCocktails = loadCocktailsFromXML(fileName: fileExtension)
         if localCocktails.count > 0 {
             let filteredCocktails = localCocktails.filter({$0.isFav! == true })
             for cocktail in filteredCocktails {
@@ -48,6 +50,15 @@ class CocktailListViewModel: ObservableObject {
                 }
             }
         }
+        
+        let filte1 = cocktailsResponse.filter({$0.isFav == true})
+        if filte1.count > 0 {
+            let sorted1 = filte1.sorted(by: {$0.name < $1.name})
+            let filte2 = cocktailsResponse.filter({$0.isFav == false})
+            let sorted2 = filte2.sorted(by: {$0.name < $1.name})
+            cocktailsResponse = sorted1 + sorted2
+        }
+        
         cocktails = cocktailsResponse
     }
     
@@ -75,17 +86,17 @@ class CocktailListViewModel: ObservableObject {
             let sorted2 = filte2.sorted(by: {$0.name < $1.name})
             cocktailsResponse = sorted1 + sorted2
         }
-        saveCocktailsToXML(cocktailsResponse)
+        saveCocktailsToXML(cocktailsResponse, fileName: fileExtension)
         cocktails = cocktailsResponse
     }
     
-    func saveCocktailsToXML(_ cocktails: [CocktailModel]) {
+    func saveCocktailsToXML(_ cocktails: [CocktailModel], fileName: String) {
         let encoder = XMLEncoder()
         encoder.outputFormatting = [.prettyPrinted]
 
         do {
             let data = try encoder.encode(cocktails, withRootKey: "cocktails", rootAttributes: nil)
-            let url = FileManager.default.temporaryDirectory.appendingPathComponent("cocktails.xml")
+            let url = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
             try data.write(to: url)
             print("✅ Saved XML to: \(url.path)")
         } catch {
@@ -93,9 +104,9 @@ class CocktailListViewModel: ObservableObject {
         }
     }
  
-    func loadCocktailsFromXML() -> [CocktailModel] {
+    func loadCocktailsFromXML(fileName: String) -> [CocktailModel] {
         let decoder = XMLDecoder()
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("cocktails.xml")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
 
         do {
             let data = try Data(contentsOf: url)
